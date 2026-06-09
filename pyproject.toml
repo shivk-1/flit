@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flit-daw"
+version = "0.1.0"
+description = "Git-style version control for FL Studio projects"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pyflp>=2.0.0",   # .flp parsing (the source of truth)
+    "rich>=13.0.0",   # CLI output
+    "watchdog>=3.0.0" # file-watch engine (auto-commit on save)
+]
+
+[project.optional-dependencies]
+ai = ["google-generativeai>=0.5.0"]  # optional musical merge resolution
+dev = ["pytest>=7.0.0"]
+
+[project.scripts]
+flit = "flit.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["flit*"]

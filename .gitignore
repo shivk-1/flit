@@ -1,0 +1,12 @@
+# This is the .gitignore for the flit *source repo*.
+# The .gitignore written into a user's flit project lives in flit/core.py.
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.env
+.env.*
+.DS_Store
